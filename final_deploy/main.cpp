@@ -421,7 +421,7 @@ void see_April_tag(void)
             }
             // move back
             servo_control(28.7020, -34); // back 6cm
-            move_us = 1000000.0 * (30 - val * 17700.4f) / 6;
+            move_us = 1000000.0 * (29 - val * 17700.4f) / 6;
             wait_us(move_us); // move backward
             servo_control(29.7020, 0); // back turn right 6cm
             ThisThread::sleep_for(2850ms);
@@ -505,8 +505,7 @@ void see_April_tag(void)
             }
             else if (num2 < 90 && num2 > 2) {
                // turn left
-               ang_turn = 90 - num2;
-               move_us = 2900000.0 * ang_turn / 90;
+               move_us = 2900000.0 * num2 / 90;
                servo_control(-33.4775, 0); // 6cm
                wait_us(move_us); // turn left 90 - num2 degree
                servo_control(0, 0);
