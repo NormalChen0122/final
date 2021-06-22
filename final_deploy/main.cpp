@@ -270,7 +270,7 @@ void see_April_tag(void)
 
                // dis_move = total_dis*sin(ang) - le_to_c - ri_to_c*cos(ang)
                num2 = num2 * 3.1415926 / 180;
-               dis_move = num1 * sin(num2) - 6.5 - 4.3 * cos(num2);
+               dis_move = num1 * sin(num2) - .5 - 4.3 * cos(num2);
                if (dis_move > 0) {
                   move_us2 = dis_move * 1000000 / 6;
                }
@@ -307,7 +307,7 @@ void see_April_tag(void)
 
                num2 = num2 * 3.1415926 / 180;
 
-               dis_move = num1 * sin(num2) - 4.3 - 6.5 * cos(num2);
+               dis_move = num1 * sin(num2) - 4.3 - 5.5 * cos(num2);
                if (dis_move > 0) {
                   move_us2 = dis_move * 1000000 / 6;
                }
@@ -413,8 +413,7 @@ void see_April_tag(void)
             }
             else if (num2 < 90 && num2 > 2) {
                // turn left
-               ang_turn = 90 - num2;
-               move_us = 2900000.0 * ang_turn / 90;
+               move_us = 2900000.0 * num2 / 90;
                servo_control(-33.4775, 0); // 6cm
                wait_us(move_us); // turn left 90 - num2 degree
                servo_control(0, 0);
